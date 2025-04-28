@@ -1,0 +1,8 @@
+ORG 00H
+MAIN:   MOV A, #0FEH
+        MOV R0, #8   ; Initialize counter for 8 iterations
+LOOP:   MOV P1, A    ; Output current value of A to P1
+        RL A         ; Rotate left to shift bit patterns
+        DJNZ R0, LOOP ; Decrement R0 and jump if not zero
+JMP MAIN
+END
